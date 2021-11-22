@@ -72,5 +72,15 @@ nav{
     color:#fff;
     background-color:rgba(0,0,0,0.7)
 
+}
 
+@media(max-width: 800px) {
+  .text-box{
+    width: 95%;
+    margin: 50px auto;
+}
+
+.text-box h1 {
+  font-size: 30px;
+}
 }
