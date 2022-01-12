@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hjelpeliste</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <style>
+body {
+  background-image: url(bakgrunn.jpg);
+  color: white;
+    }
+
+hlheader {
+  font-size: 40px;
+  background-color: rgba(0,51,102,0.8); 
+}
+
+hlheader,form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button {
+  padding: 20px;
+  font-size: 18px;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: rgba(0,51,102);
+  background: white;
+  cursor: pointer;
+  transition: all0.3s ease;
+}
+
+form button:hover {
+  background: rgba(0,51,102);
+  color: white;
+}
+
+div ul{
+    color: #000;
+}
+
+.hjelpeliste_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hjelpeliste {
+  min-width: 30%;
+  list-style: none;
+}
+
+.hl {
+  margin: 8px;
+  background: white;
+  color: black;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.hl li {
+  flex: 1;
+}
+
+.trash_btn, .complete_btn{
+  background: rgba(0,51,102);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.complete_btn {
+  background:rgb(144, 209, 247);
+}
+
+.hl_item {
+  padding: 0px 8px;
+}
+
+.fa-trash, .fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+</style>
+</head>
+
+<body>
+  <section class="header">
+      <nav>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">HJEM</a></li>
+            <li><a href="timeplan.html">TIMEPLAN</a></li>
+            <li><a href="lekseplan.html">LEKSEPLAN</a></li>
+            <li><a href="kompetansemal.html">KOMPETANSEMÅL</a></li>
+            <li><a href="hjelpeliste.html">HJELPELISTE</a></li>
+            <li><a href="lenker.html">LENKER</a></li>
+            <li><a href="kilder.html">KILDER</a></li>
+          </ul>
+        </div>
+      </nav>
+  
+  <div id="oversrift">
+   <hlheader>
+    <h1> HJELPELISTE </h1>
+   </hlheader>
+  </div>
+
+  <form>
+    <input type="text" class="hjelpeliste_input">
+    <button class="hjelpeliste_button" type="button" onClick="addhl();">
+      <i class="fas fa-plus-square"> </i>
+    </button> 
+  </form>
+
+  <div class="hjelpeliste_container">
+    <ul class="hjelpeliste"></ul>
+  </div>
+
+    <script src="./app.js"></script>
+</section>
+</body>
+</html>

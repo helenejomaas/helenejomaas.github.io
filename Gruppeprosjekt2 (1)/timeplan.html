@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeplan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      #container {
+        width: 90%;
+        margin: 20px auto; 
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      
+      table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        text-align: left;
+        background-color:rgba(179, 217, 255, 0.3);
+       }
+
+      th, td {
+        border: 1px solid rgb(00,00,00);
+        padding: 8px;
+        font-size: 12px;
+        }
+      
+      td {
+        font-size: 12px;
+      }
+
+      .ferie {
+        text-align: center;
+        background-color: rgba(32, 35, 245, 0.3);
+      }
+
+      .pause {
+        background-color: rgba(32, 35, 245, 0.3);
+      }
+
+      #lunsj {
+        background-color: rgba(32, 35, 245, 0.3);
+      }
+
+      #advarsel {
+        color: rgba(0, 0, 0, 0);
+      }
+
+      @media(max-width: 900px) {
+        #advarsel {
+          color: black;
+        }
+      }
+    </style>
+</head>
+
+<body>
+  <section class="header">
+    <nav>
+      <div class="nav-links">
+          <ul>
+            <li><a href="index.html">HJEM</a></li>
+            <li><a href="timeplan.html">TIMEPLAN</a></li>
+            <li><a href="lekseplan.html">LEKSEPLAN</a></li>
+            <li><a href="kompetansemal.html">KOMPETANSEMÅL</a></li>
+             <li><a href="hjelpeliste.html">HJELPELISTE</a></li>
+            <li><a href="lenker.html">LENKER</a></li>
+            <li><a href="kilder.html">KILDER</a></li>
+          </ul>
+      </div>
+    </nav> 
+  
+  <div id="container">
+    <h1> Timeplan 21/22 </h1>
+
+    <p id="advarsel">OBS! Hold mobilen i landskapsmodus for best oversikt over timeplanen!</p>
+
+    <table id="timeplan">
+      <thead>
+        <tr>
+         <th> </th>
+         <th>Mandag</th>
+         <th>Tirsdag</th>
+         <th>Onsdag</th>
+         <th>Torsdag</th>
+         <th>Fredag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>1.økt</b> <br> 08.30-10.00</td>
+          <td> </td>
+          <td> </td>
+          <td> Markedsføring og ledelse 1</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr class="pause">
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td><b>2.økt</b> <br> 10.00-11.30</td>
+          <td> Markedsføring og ledelse 2</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr id="lunsj">
+          <td colspan="6">Lunsj</td>
+        </tr>
+        <tr>
+          <td><b>3.økt</b> <br> 12.00-13.30</td>
+          <td> Markedsføring og ledelse 1</td>
+          <td> Markedsføring og ledelse 2</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+         <tr class="pause">
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <td><b>4.økt</b> <br> 13.30-15.00</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> Markedsføring og ledelse 2</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+
+</section>
+</body>
