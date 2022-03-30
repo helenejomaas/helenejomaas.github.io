@@ -1,0 +1,172 @@
+<!-- Til denne innleveringen har jeg laget et terningsill. Jeg ønsket å utfordre megselv med å prøve å utvikle spillet selv (uten å hente inspirasjon fra nettet), både fordi jeg syntes det var gøy, men også som en utfordrnig jeg kunne lære av. På bakgrunn av dette regner jeg med at noe av javaScripten kunne vært løst på en mer praktisk/enklere måte, men jeg sier meg fornøyd så lenge det fungerer. :-) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        #hoved {
+            border: 1px solid black; 
+            box-shadow: 5px 10px darkblue;
+            margin: 80px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #terninger {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #terninger > div {
+            width: 60px;
+            height: 60px;
+            margin-right: 5px;
+        }
+
+        #kastKnapp {
+            margin-top: 20px;
+            width: 20%;
+            height: 40px;
+        }
+
+        #omstartKnapp {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .valgteTerninger { 
+            border: 5px solid rgb(55, 160, 255, 0.7);
+            border-radius: 10px;
+        }
+
+        #oversiktAntallKast {
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div id="hoved">
+    <h1>Yatzy</h1>
+
+    <h3>Hvor mange kast bruker du på å få yatzy?</h2>
+    <p>Kast terningene, klikk på de du ønsker å beholde, og se hvor mange forsøk du trenger for å få 5 like!</p>
+
+    <div id="terninger">
+        <!--Lager 5 diver som skal fungere som terninger-->
+        <div><img src="Terning_6.png"></div>
+        <div><img src="Terning_6.png"></div>
+        <div><img src="Terning_6.png"></div>
+        <div><img src="Terning_6.png"></div>
+        <div><img src="Terning_6.png"></div>
+    </div> 
+
+    <button id="kastKnapp">Kast terninger!</button>
+
+    <button id="omstartKnapp">Start på nytt</button>
+
+    <h3 id="oversiktAntallKast">Du har brukt: 0 kast</h2>
+
+    </div>
+
+    
+    <script>
+        let hovedEl = document.querySelector('#hoved');
+
+        //Lager en nodelist/"array" i DOM med de 5 div-ene som skulle benyttes som terninger
+        let terninger = document.querySelectorAll('#terninger > div');
+        for(let i=0; i<terninger.length; i++){ //Bruker en for-løkke som gjelder for alle terningene, slik at jeg slipper å gjenta den samme koden for hver terning
+            terninger[i].className = "ikkeValgteTerninger" //Gir terningene klassen "ikkeValgteTerninger" fra start (trenger til funksjon senere i koden)
+        }
+
+        let oversiktAntallKastEl = document.querySelector('oversiktAntallKast');
+        let antallKast = 0; //Deklarer en variabel for antall kast
+
+        let kastBtn = document.querySelector('#kastKnapp');
+        kastBtn.addEventListener('click', kastTerning); //Gir knappen en lytter og en funkjson 
+
+        //Lager en funksjon som fyres av når man klikker på kast-knappen
+        function kastTerning(e) {
+            for(let i=0; i<terninger.length; i++){ //For-løkken skal gjelde for alle terningene i nodelisten jeg lagde tidligere
+                if(terninger[i].className !== "valgteTerninger"){ //Dersom terningene har klassen "ikkeValgteTerninger" skal de kastes, altså få et tilfeldig tall fra 1-6
+                    let tilfeldig = Math.floor(Math.random() * 6) + 1; //Deklarerer en variabel som gir et tall mellom 1 og 6
+                    terninger[i].innerHTML = `<img src="Terning_${tilfeldig}.png">`; //Lar det tilfeldige tallet bestemme hvilket bilde som vises i diven
+                    terninger[i].id = tilfeldig; //Terningen får id lik tallet til terningkastet 
+                }
+            terninger[i].addEventListener('click', trykkPaaTerning); //Gir terningene en lytter som gjør det mulig å trykke på den
+            }
+            antallKast += 1; //Antall kast øker med 1 for hver gang kast-knapp trykkes på 
+            oversiktAntallKast.innerHTML = `Du har brukt: ${antallKast} kast`; //Teksten som viser antall kast oppdateres for hver gang det kastes
+        }
+
+        let valgteTerningerArr = []; //Lager et tomt array som jeg kan legge terningene i dersom de blir "valgt"/trykket på 
+
+        function trykkPaaTerning(){ 
+            //If-testen baserer seg på hvilken klasse terningen har når du trykker på den - dersom terningen ikke er valgt fra før av, skal den få status som "valgt", og dersom den er valgt fra før av skal den få status som "ikke valgt"
+            if(this.className == "ikkeValgteTerninger"){ 
+                this.className = "valgteTerninger";
+                valgteTerningerArr.push(this); //Legger terningen til i arrayet av valgte terninger
+
+                let valgtTall = valgteTerningerArr[0].id; //Lar det "valgte tallet", altså tallet som spiller samler på, være den første terningen som spilleren trykker på
+
+                //Dette kunne nok vært løst på en enklere måte :-)
+                if(valgteTerningerArr.length == 5){
+                    if(valgteTerningerArr[1].id == valgtTall){
+                            if(valgteTerningerArr[2].id == valgtTall){
+                                if(valgteTerningerArr[3].id == valgtTall){
+                                    if(valgteTerningerArr[4].id == valgtTall){
+                                        let yatzyEl = document.createElement('h1');
+                                        yatzyEl.id = "beskjedYatzy";
+                                        yatzyEl.innerHTML = "Du har fått Yatzy!";
+                                        hovedEl.appendChild(yatzyEl);
+                                        oversiktAntallKast.style.border = "3px solid rgb(55, 160, 255, 0.7)";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                
+            } else{ //Dette skjer dersom terningen var valgt fra før (spiller klikker på terningen for ikke lenger å samle på den)
+                this.className = "ikkeValgteTerninger";
+                valgteTerningerArr.splice(this); //Fjerner terningen fra arrayet av valgte terninger
+            }
+        }
+
+        let omstartBtn = document.querySelector('#omstartKnapp');
+        omstartBtn.addEventListener('click', startPaaNytt); //Gir omstartsknappen en lytter og en funskjon
+
+
+        function startPaaNytt(){ //Funksjonen som fyres av når omstartsknappen trykkes på 
+            for(let i=0; i<terninger.length; i++){
+                terninger[i].className = "ikkeValgteTerninger"; //Alle terningene skal få status som "ikke valgt"
+            }
+            valgteTerningerArr.splice(0, valgteTerningerArr.length) //Fjerner alle terninger fra arrayet av valgte terninger
+
+            antallKast = 0; //Setter antall kast tilbake til 0
+            oversiktAntallKast.innerHTML = `Du har brukt: ${antallKast} kast`; //Oppdaterer teksten som viser antall kast til også å være 0 
+            oversiktAntallKast.style.border = "none"; //Fjerner kantlinjen rundt antall kast som kommer når spiller får yatzy
+
+            hovedEl.removeChild(beskjedYatzy); //Fjerner beskjeden som popper opp når spiller får yatzy 
+        }
+     
+    </script>
+</body>
+</html>
