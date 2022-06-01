@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <title>Det binære tallsystemet</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      #eksempel_1 {
+        border: 1px solid rgb(00, 00, 00);
+        padding: 20px;
+        background-color:rgba(57, 255, 20, 0.3);
+        width: 450px;
+      }
+       #eksempel_2 {
+        border: 1px solid rgb(00, 00, 00);
+        padding: 20px;
+        background-color:rgba(57, 255, 20, 0.3);
+        width: 450px;
+      }
+    </style>
+  </head>
+
+
+  <body>
+    <section class="header">
+        <nav>
+            <a href="index.html"></a>
+            <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HJEM</a></li>
+                <li><a href="tallsystemer.html">OM TALLSYSTEMER</a></li>
+                <li><a href="binarysystem.html">DET BINÆRE TALLSYSTEMET</a></li>
+                <li><a href="sekstentallssystemet.html">SEKSTENSTALLSSYSTEMET</a></li>
+                <li><a href="quiz.html">QUIZ</a></li>
+                <li><a href="kilder.html">KILDER</a></li>
+            </ul>
+            </div>
+        </nav>
+      </section>
+
+      
+    <div class="container">
+
+    <h1>Totallsystemet/Det binære tallsystemet</h1>
+
+    <p class="paragraph">
+      At hele vårt digitale og teknologiske samfunn er basert på 0’ere og 1’ere er vanskelig å forstå for mange. Men hvor forskjellig er totallsystemet som danner grunnlaget for dagens moderne teknologi egentlig fra de vanlige tallsystemene vi vanligvis forholder oss til, som titallssystemet og sekstitallssystemet?
+    </p>
+
+    <h2>Hvordan fungerer det binære totallsystemet?</h2>
+
+    <p class="paragraph">
+      At det binære tallsystemet er et totallsystem betyr at det er et tallsystem som har 2 som grunntall, altså at det baserer seg på toerpotenser. På samme måte som titallssystemet, er totallsystemet også et posisjonssystem. Det betyr at posisjonen til sifrene bestemmer hvilken toerpotens som skal representeres. Til forskjell fra titallsystemet har totallsystemet derimot kun to sifre; 0 og 1. Disse sifrene plasseres bevisst i de ulike posisjonene for å representere en bestemt toerpotens.
+    </p>
+
+    <div id="eksempel_1">
+    <p><b>Totallsystemet baserer seg på toerpotenser:</b></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td><b>11001 =</b></td>
+        </tr>
+      </tbody>
+    </table>
+    
+      <table>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>x</td>
+            <td>2<sup>4</sup></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>x</td>
+            <td>2<sup>3</sup></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>2</sup></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>1</sup></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>x</td>
+            <td>2<sup>0</sup></td>
+          </tr>
+        </tbody>
+      </table>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>= 16 + 8 + 0 + 0 + 1 = 25</td>
+        </tr>
+        <tr>
+          <td><i>(11001 i totallsystemet tilsvarer 25 i titallssystemet)</i></td>
+        </tr>
+        <tr>
+          <td>(11001)<sub>2</sub> = (25)<sub>10</sub></td>
+        </tr>
+      </tbody>
+    </table>
+      
+    </div>
+
+    <p class="paragraph">
+      I eksempelet over viser vi tankegangen for utregningen av hvilke tall den binære tallkoden «11001» representerer. Begynner vi fra høyre, skal de fem ulike posisjonene til sifrene i tallkoden representere toerpotensene 20, 21, 22, 23, 24. Videre blir disse toerpotensene enten ganget med 0 eller 1. I tallkoden «11001» ser vi at etter å ha ganget potensene med enten 0 eller 1, får vi tallene 16 + 8 + 0 + 0 +1, som til sammen blir tallet 25. Det vil si at den binære tallkoden «11001» fungerer som samme verdi som 25 i titallsystemet.  
+    </p>
+
+    <p class="paragraph">
+      Alt av innhold og informasjon i en datamaskin består utelukkende av serier og kombinasjoner av sifrene 0 og 1. Vanligvis kommuniseres tallkodene i bytes, som er en sammensetning av 8 bits. En bit er enten 0 eller 1. Et eksempel på en byte er «11011100», som representerer tallet 220. Om vi skal representere tallet 1 med en byte, settes 0 inn på alle posisjonene som ikke benyttes – «00000001». 
+      Siden det er åtte plasser i en byte, er den høyeste potensen vi kan få 27. Siden det også bare er to mulige sifre, er det høyeste tallet i titallsystemet vi kan skrive i totallsystemet 255. Det kan vi skrive som "11111111" i totallsystemet:
+      1 · 27 + 1 · 26 + 1 · 25 + 1 · 24 + 1 · 23 + 1 · 22 + 1 · 21 + 1 · 20 = 255<sub>(10)</sub>
+    </p>
+
+    <div id="eksempel_2">
+      <p><b>Hvordan skriver vi 64 som en binær tallkode?</b></p>
+      
+      <table>
+      <tbody>
+        <tr>
+          <td>(64)<sub>10</sub> = (?)<sub>2</sub></td>
+        </tr>
+        <tr>
+          <td>2<sup>6</sup> = 64 </td>
+        </tr>
+        <tr>
+          <td><i>01000000 = </i></td>
+        </tr>
+      </tbody>
+    </table>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>7</sup></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>x</td>
+            <td>2<sup>6</sup></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>5</sup></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>4</sup></td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>3</sup></td>
+          </tr>
+           <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>2</sup></td>
+          </tr>
+           <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>1</sup></td>
+          </tr>
+           <tr>
+            <td>0</td>
+            <td>x</td>
+            <td>2<sup>0</sup></td>
+          </tr>
+        </tbody>
+      </table>
+
+<table>
+      <tbody>
+        <tr>
+          <td>= 0 + 64 + 0 + 0 + 0 + 0 + 0 + 0 = 64</td>
+        </tr>
+        <tr>
+          <td><i>(01000000 i totallsystemet tilsvarer 64 i titallssystemet)</i></td>
+        </tr>
+        <tr>
+          <td>(64)<sub>10</sub> = (01000000)<sub>2</sub></td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+    <h2>Hvorfor akkurat et totallsystem?</h2>
+
+    <p class="paragraph">
+      Det er ikke tilfeldig at det er akkurat det binære tallsystemet som benyttes i datamaskiner og digitalt utstyr. I digitale maskiner brukes nemlig strøm til å representere data. En prosessor, som er enheten som gjennomfører alle beregninger i datamaskinen, består av milliarder av transistorer som kommuniserer tallkoder som prosessoren bruker til sine beregninger. Måten disse transistorene representerer tallkoder er ved enten å være skrudd av eller å være skrudd på; enten blir det sendt strøm gjennom transistoren, eller så blir det ikke sendt strøm. Det betyr at transistoren har mulighet for å kommunisere to ulike verdier; «på» tolkes som 1, og «av» tolkes som 0. Dermed må transistorene og prosessoren kommunisere med et tallsystem som kun inneholder to forskjellige verdier, som er grunnen til at det binære tallsystemet er det som benyttes i alle datamaskiner og alt digitalt utstyr. Videre kan disse sifrene og tallkodene kombineres på måter som gjør at datamaskinens programvare tolker det som både tekst, bilder, video og lyd. 
+    </p>
+
+    <h2>Representasjon av tekst: ASCCI-tegnsettet</h2>
+    <p>
+      De binære tallkdoene representerer ikke bare tall, men kan også brukes til å representere tekst. Da benyttes ulike "oversettingstabeller", eller tegnsett, til å oversette de binære kosedene til andre symboler og bokstaver. 
+    </p> 
+    <p>
+      ASCCI-tegnsettet er et tegnsett som benytter tall fra 0 til 127 i titallsystemet til å vise til forskjellige tegn. Det var et av de første tegnsettene som ble brukt, og de 127 forskjellige tegnene er blant annet bokstavene i det engelske alfabetet, mellomrom, tall og ulike symboler som for eksempel krøllalfa. Som du nå har lært kan en byte representere tall fra 0 til 255, men ASSCI benytter bare halvparten av disse. Hva de resterende kodene representerte kunne bestemmes av programvareutvikleren. Dette var nyttig av fordi man i Israel kunne benytte hebraiske bokstaver, og i Norge kunne vi skrive Æ, Ø og Å. Men, etter hvert som verden ble mer internasjonal ble det problematisk ettersom den samme byten kunne representere forskjellige tegn i ulike land eller i ulike programvarer. Derfor bruker vi i dag Unicode. Dette tegnsettet inneholder absolutt alle skriftspråk. Det inneholder til og med skriftspråk som ikke lenger eksisterer, i tillegg til fantasispråk. UTF-8 står for «Universal Coded Character Set + Transformation Format 8-bit”, og er et tegnsett som kan håndtere alle Unicode-tegn. I Norge er det særlig viktig å bruke UTF-8 siden vi bruker bokstaver som ikke finnes i det engelske alfabetet og derfor ikke dekkes av ASCCI. 
+    </p>
+  
+
+    </div>
+  
+  </body>
+
+</html>
+

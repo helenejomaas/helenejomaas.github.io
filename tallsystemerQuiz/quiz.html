@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+
+  <style>
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        text-align: left;
+        background-color: rgba(57, 255, 29, 0.3);
+        width: 70%;
+    }
+
+    th, td {
+        border: 1px solid rgb(00, 00, 00);
+        padding: 8px;
+    }
+
+    #sjekkSvarBtn, #visTabellBtn {
+        font-size: 18px;
+        padding: 8px 8px;
+        border: solid black 2px;
+        border-radius: 10px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    #highscore {
+        font-size: 15px;
+        padding: 8px 8px;
+        border: solid black 1px;
+        border-radius: 10px;
+        background-color: rgba(57, 255, 29, 0.3);
+    }
+
+    #antallPoeng {
+      font-size: 20px;
+      color: rgb(1, 100, 30);
+    }
+    
+</style>
+  
+</head>
+
+<body>
+      <section class="header">
+      <nav>
+        <a href="index.html"></a>
+          <div class="nav-links">
+            <ul>
+              <li><a href="index.html">HJEM</a></li>
+              <li><a href="tallsystemer.html">OM TALLSYSTEMER</a></li>
+              <li><a href="binarysystem.html">DET BINÆRE TALLSYSTEMET</a></li>
+              <li><a href="sekstentallssystemet.html">SEKSTENSTALLSSYSTEMET</a></li>
+              <li><a href="quiz.html">QUIZ</a></li>
+              <li><a href="kilder.html">KILDER</a></li>
+              
+            </ul>
+          </div>
+        </nav>
+      </section> 
+
+    <button id="startQuiz">Start quiz!</button>
+        
+    <div class="modal" id="modal">
+      <div class="modalHeader">
+        <div class="title"> Logg inn </div>
+        <button class="closeButton"> &times;</button> <!-- &times; gir x-symbol-->
+      </div>
+        <div class="modalBody">
+          <p>
+          Din informasjon lagres i vår database og brukes kun til å sikre en optimal brukeropplevelse. Den gjør              det mulig for deg å sammenlikne dine resultater med andres. Trykk X dersom du ikke ønsker å logge inn.             </p>
+
+      <div id="nybruker">
+        <label for="fornavn">Fornavn</label>
+        <input type="text" id="fornavn">
+
+        <label for="etternavn">Etternavn</label>
+        <input type="text" id="etternavn">
+
+        <button id="loggInnBtn">Logg inn</button>
+    </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+        
+    <div class="container" id="quizDiv">
+
+     <h1>Quiz</h1>
+
+     <div id="quiz">
+
+    </div>
+    
+
+    <button id="sjekkSvarBtn">
+        Sjekk svar
+    </button>
+
+    <div id="resultat">
+    </div>
+
+    <h2 id="highscore">Din highscore: </h2>
+
+     <button id="visTabellBtn">
+        Trykk her for å se tabell over resultater!
+    </button>
+      
+    </div>
+        
+	<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+ 
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+<!--
+ https://www.youtube.com/watch?v=MBaw_6cPmAw 13.20
+-->
